@@ -1,0 +1,17 @@
+nav{
+    background-color: $agencyDark;
+    padding: $s-pad;
+    
+    #nav{
+        color: $default;
+        @include flex-row;
+        justify-content: space-between;
+        width: 80%;
+        margin: auto;
+
+        ul{
+            gap: 2rem;
+        }
+        
+    }
+}
