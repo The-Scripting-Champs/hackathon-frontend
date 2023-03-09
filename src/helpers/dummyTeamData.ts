@@ -1,6 +1,7 @@
-import { Client } from "./AddTeamModal";
+import { Client } from "./AddClientModal";
+import { Team } from "./AddTeamModal";
 
-const teams: Client[] = [
+export const clients: Client[] = [
     {
       id: 0,
       name: 'Jayasin',
@@ -11,7 +12,7 @@ const teams: Client[] = [
     {
       id: 1,
       name: 'Pravin',
-      bio: 'He is a coach for real estate business',
+      bio: 'Manages Developer Team',
       avatar: '/assets/avatar_male.png',
       accountCreationDate: 3
     },
@@ -23,26 +24,28 @@ const teams: Client[] = [
       accountCreationDate: 3
     }
   ];
-// const teams: Team[] = [
-//     {
-//       id: 0,
-//       name: 'Jayasin',
-//       bio: 'Team Manager',
-//       avatar: '../../assets/dummy_avatar.png',
-//       accountCreationDate: 3
-//     },
-//     {
-//       id: 1,
-//       name: 'Pravin',
-//       bio: 'He is a coach for real estate business',
-//       avatar: '/assets/avatar_male.png',
-//       accountCreationDate: 3
-//     },
-//     {
-//       id: 2,
-//       name: 'Parth',
-//       bio: 'Team Senior Backend Manager',
-//       avatar: '/assets/avatar_male.png',
-//       accountCreationDate: 3
-//     }
-//   ];
+  
+export const teams: Team[] = [
+    {
+      id: 0,
+      name: 'Software Developers',
+      info: 'Software Development team Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quam!',
+      adminAvatar: '../../assets/dummy_avatar.png',
+      dueDate: "03/08/09"
+    },
+    {
+      id: 1,
+      name: 'Software Developers',
+      info: 'Software Development team Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quam!',
+      adminAvatar: '../../assets/dummy_avatar.png',
+      dueDate: "03/08/09"
+    },
+    {
+      id: 2,
+      name: 'Software Developers',
+      info: 'Software Development team Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quam!',
+      adminAvatar: '../../assets/dummy_avatar.png',
+      dueDate: "03/08/09"
+    },
+    
+  ];

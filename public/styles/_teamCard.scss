@@ -1,0 +1,16 @@
+.team--card{
+    background-color: $agencyDark;
+    width: 300px;
+    height: 250px;
+    border-radius: $m-border-radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover{
+        transform: scale(1.05)
+    }
+}

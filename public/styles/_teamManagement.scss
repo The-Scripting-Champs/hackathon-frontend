@@ -1,0 +1,48 @@
+#teamManagement{
+    background-color: $agencyGrey;
+    height: 100vh;
+    color: $default;
+    position: relative;
+
+    .team--management--section{
+        width: 80%;
+        margin: auto;
+    }
+
+    .header{
+        @include flex-row;
+        justify-content: space-between;        
+    }
+
+    .team--cards--section{
+        @include flex-row;
+        justify-content: flex-start;
+        margin: $l-margin;
+    }
+
+    .modal--section{
+        position: fixed;
+        inset: 0;
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        z-index: 10000000000;
+
+        // form{
+        //     position: fixed;
+        //     top: 50%;
+        //     left: 50%;
+        //     transform: translate(-50%, 50%);
+        //     z-index: 10000000000;
+        //     padding: $xs-pad;
+        //     border-radius: $m-border-radius;
+        //     @include flex-col;
+        // }
+    }
+    form{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0; 
+        right: 0;
+        background-color: $agencyDark;
+    }
+}

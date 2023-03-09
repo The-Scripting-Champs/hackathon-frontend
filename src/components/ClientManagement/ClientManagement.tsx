@@ -1,28 +1,29 @@
 import React, { useState } from 'react'
+import { AddClientModal } from '../../helpers/AddClientModal'
 import { AddTeamModal } from '../../helpers/AddTeamModal'
-import { teams } from '../../helpers/dummyTeamData'
-import { TeamCard } from './TeamCard'
+import { clients, teams } from '../../helpers/dummyTeamData'
+import { ClientCard } from './ClientCard'
 
-export const TeamManagement = () => {
+export const ClientManagement = () => {
   const [showModal, setShowModal] = useState(false)
   return (
     <div id='teamManagement'>
       <div className='team--management--section'>
         <div className='header'>
-            <h2>Teams</h2>
-            <button onClick={() => setShowModal(true)}>Create New Team</button>
+            <h2>Clients</h2>
+            <button onClick={() => setShowModal(true)}>Add New Client</button>
         </div>
         <div className='team--cards--section'>
-          {teams.map(team => (
-            <TeamCard 
-            {...team}
+          {clients.map(client => (
+            <ClientCard 
+            {...client}
             />
           ))}
         </div>
       </div>
       {showModal && 
       <div className='modal--section'>
-        <AddTeamModal setShowModal={setShowModal}/>
+        <AddClientModal setShowModal={setShowModal}/>
       </div>
         }
     </div>

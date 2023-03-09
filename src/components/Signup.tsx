@@ -4,7 +4,6 @@ export const Signup = () => {
   const [data, setData] = useState({
     fullName: "",
     email: "",
-    username: "",
     password: "",
     accountType: ""
   })
@@ -16,7 +15,7 @@ export const Signup = () => {
       ...prevData, 
       [name]:value
     }
-      ))
+    ))
 
   }
 
@@ -39,17 +38,10 @@ export const Signup = () => {
         onChange={handleChange}
       />
       <input 
-        type="text" 
-        name="username" 
-        placeholder='Username'
-        value={data.username}
-        onChange={handleChange}
-      />
-      <input 
         type="password" 
         name="password" 
         placeholder='Password'
-        value={data.username}
+        value={data.password}
         onChange={handleChange}
       />
       <select title="sign-type" name="accountType" onChange={handleChange}>

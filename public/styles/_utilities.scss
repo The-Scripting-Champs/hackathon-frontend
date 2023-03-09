@@ -77,6 +77,18 @@ textarea{
     }
 }
 
+button{
+    background-color: $agencyBlue;
+    padding: 1rem;
+    border-radius: $s-border-radius;
+    cursor: pointer;
+    color: $default;
+
+    &:hover{
+        background-color: $agencyOutline;
+    }
+}
+
 input[type=submit]{
     color: $default;
     cursor: pointer;
