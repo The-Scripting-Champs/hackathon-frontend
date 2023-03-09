@@ -35,3 +35,64 @@ ul{
     }
 }
 
+form{
+    width: 35%;
+    @include flex-col;
+    gap: 1rem;
+    padding: $l-pad $s-pad;
+    box-shadow: 0 5px 5px 0 rgba(0 0 0 / 0.2);
+    text-align: center;
+    border-radius: $m-border-radius;
+
+    @include mobile{
+        width: 100%;
+    }
+}
+
+input, 
+select,  
+textarea{
+    width: 90%;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.8rem 0.5rem;
+    border: 1px solid $agencyOutline;
+    border-radius: $s-border-radius;
+    color: $agencyDark;
+    caret-color: $agencyBlue;
+    resize: none;
+    
+    &:hover{
+        border: 1px solid $agencyOutline;
+    }
+
+    @include mobile(){
+        width: 100%;
+        font-size: 16px;
+        padding: 0.5rem;
+
+        &::placeholder{
+            font-size: 14px;
+        }
+    }
+}
+
+input[type=submit]{
+    color: $default;
+    cursor: pointer;
+    background-color: $agencyBlue;
+
+    &:hover{
+        background-color: $agencyOutline;
+    }
+    @include mobile(){
+        font-weight: 100;
+        -webkit-border-radius:0;
+        -webkit-appearance: none; 
+    }
+}
+
+#signin, #signup{
+    height: 100vh;
+    @include flex-col;
+}
