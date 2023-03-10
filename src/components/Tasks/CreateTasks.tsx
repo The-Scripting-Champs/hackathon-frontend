@@ -9,7 +9,10 @@ export const CreateTasks = () => {
         description: "",
         image: "",
         taskStatus: "",
-        assignee: user,
+        assignee: {
+          name: user?.fullName,
+          email: user?.email 
+        },
     })
 
     const { name, description, image, taskStatus, assignee} = taskData
@@ -101,7 +104,7 @@ export const CreateTasks = () => {
                 <option value="Done">Done</option>
             </select>
             <br />
-            <h4>REPORTER: {user.fullName}</h4>
+            <h4>REPORTER: {user?.fullName}</h4>
             <br />
             <button type='submit'>
                 Add Task

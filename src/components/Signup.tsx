@@ -36,7 +36,7 @@ export const Signup = () => {
       if (response.ok) {
         const data = await response.json();
         toast.success(data.message);
-        navigate('/login')
+        navigate('/signin')
       }else {
         const { error } = await response.json();
         throw new Error(error);

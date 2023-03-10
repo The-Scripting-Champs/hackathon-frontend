@@ -76,11 +76,10 @@ export const UserProvider = ({children}) => {
         setUser(null)
         localStorage.removeItem('hackathonUser')
         toast.info('Logged Out Successfully...')
-        return navigate('/login')
+        return navigate('/signin')
     }
 
 
-    // export values to be used in other components
     const value = {
         user,
         setUser,
