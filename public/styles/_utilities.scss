@@ -47,6 +47,10 @@ form{
     @include mobile{
         width: 100%;
     }
+
+    button{
+        width: 90%;
+    }
 }
 
 input, 
@@ -105,6 +109,12 @@ input[type=submit]{
 }
 
 #signin, #signup{
+    height: 100vh;
+    @include flex-col;
+}
+
+#loader{
+    width: 100%;
     height: 100vh;
     @include flex-col;
 }

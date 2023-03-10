@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState} from 'react'
 import dummyAvatar from "../assets/dummy_avatar.png"
 import { Link } from "react-router-dom"
+import { AccountPanel } from '../helpers/AccountPanel'
 
 export const Nav = () => {
+    const [showPanel, setShowPanel] = useState<boolean>(false)
   return (
     <nav>
         <div id='nav'>
@@ -17,8 +19,9 @@ export const Nav = () => {
                 <li><Link to="/boards">Boards</Link></li>
                 <li><Link to="/invoices">Invoices</Link></li>
             </ul>
-            <div>
+            <div onClick={() => setShowPanel(prev => !prev)}>
                 <img src={dummyAvatar} alt="dummy avatar"/>
+                {showPanel && <AccountPanel />}
             </div>
         </div>
     </nav>

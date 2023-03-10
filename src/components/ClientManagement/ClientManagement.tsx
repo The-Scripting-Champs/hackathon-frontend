@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import { useUser } from '../../contexts/UserContext'
 import { AddClientModal } from '../../helpers/AddClientModal'
 import { AddTeamModal } from '../../helpers/AddTeamModal'
-import { clients, teams } from '../../helpers/dummyTeamData'
 import { ClientCard } from './ClientCard'
 
 export const ClientManagement = () => {
+    const { clients } = useUser()
   const [showModal, setShowModal] = useState(false)
   return (
     <div id='teamManagement'>
@@ -14,7 +15,7 @@ export const ClientManagement = () => {
             <button onClick={() => setShowModal(true)}>Add New Client</button>
         </div>
         <div className='team--cards--section'>
-          {clients.map(client => (
+          {clients?.map((client:any) => (
             <ClientCard 
             {...client}
             />

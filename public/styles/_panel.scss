@@ -1,0 +1,12 @@
+.panel{
+    width: 200px;
+    height: 100%;
+    background-color: $agencyDark;
+    color: $default;
+    @include flex-col;
+    justify-content: flex-start;
+    position: absolute;
+    top: 4.5rem;
+    right: 0.5rem;
+    border-radius: $m-border-radius;
+}

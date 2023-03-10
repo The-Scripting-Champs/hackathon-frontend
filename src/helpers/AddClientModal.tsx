@@ -1,23 +1,23 @@
 import React, { useState} from 'react'
-import { clients } from './dummyTeamData';
-
+import { useUser } from '../contexts/UserContext';
+import { toast } from "react-toastify"
 export interface Client {
     id?: number;
     name: string;
     bio: string;
-    avatar: string;
-    accountCreationDate: number;
-  }
+    dateOfCreation: string;
+}
 
 export const AddClientModal = ({setShowModal}:any) => {
+    const { user } = useUser()
+
     const [clientData, setClientData] = useState<Client>({
         name: "",
         bio: "",
-        avatar: "",
-        accountCreationDate: 0
+        dateOfCreation: ""
     })
 
-    const { name, bio, avatar, accountCreationDate } = clientData
+    const { name, bio, dateOfCreation } = clientData
 
     const handleChange = (e:Event | any) => {
         e.preventDefault()
@@ -30,14 +30,34 @@ export const AddClientModal = ({setShowModal}:any) => {
         console.log(clientData)
     }
 
+    const addClient = async (e: Event | any) => {
+        e.preventDefault()
+        const url = 'http://localhost:3001/clients';
+        const headers = {
+          'Authorization': user.token,
+          'Content-Type': 'application/json'
+        };
+      
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(clientData)
+          });
+      
+          const result = await response.json();
+          console.log(result);
+          toast.success('Client Added')
+          setShowModal(false)
+        } catch (error:any) {
+          toast.error(error);
+        }
+      }
 
-    const addTeam = () => {
-      clients.push(clientData)
-      setShowModal(false)
-    }
+
 
   return (
-    <form>
+    <form onSubmit={addClient}>
         <input 
         type="text" 
         name='name'
@@ -53,20 +73,15 @@ export const AddClientModal = ({setShowModal}:any) => {
         onChange={handleChange}
         />
         <input 
-        type="number" 
-        name='accountCreationDate'
+        type="date" 
+        name='dateOfCreation'
         placeholder='Account Creation Date'
-        value={accountCreationDate}
+        value={dateOfCreation}
         onChange={handleChange}
         />
-        <input 
-        type="file" 
-        name='avatar'
-        value={avatar}
-        onChange={handleChange}
-        />
-        <button onClick={addTeam}>Add Client</button>
-        {/* <button onClick={setShowModal((prev:boolean) => !prev)}>Close</button> */}
+        
+        <button>Add Client</button>
+        <button onClick={() => setShowModal((prev:boolean) => !prev)}>Close</button>
     </form>
   )
 }
