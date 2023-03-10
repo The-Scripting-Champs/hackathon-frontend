@@ -1,0 +1,54 @@
+#tasks{
+    background-color: $agencyDark;
+    height: 100vh;
+    color: $default;
+
+    .tasks--section{
+        width: 80%;
+        margin: auto;
+        
+        hr{
+            margin-block: $m-margin;
+            width: 100%;
+            height: 2px;
+            background-color: $default;
+        }
+
+        h4{
+            @include flex-row;
+        }
+        
+        .header{
+            @include flex-row;
+            justify-content: space-between;
+            background-color: $agencyBlue;
+            padding: $m-pad;
+            border-radius: $m-border-radius;
+
+            button{
+                background-color: $agencyGrey;
+
+                &:hover{
+                    border: 1px solid $agencyOutline;
+                    background-color: $default;
+                    color: $agencyDark;
+                }
+            }
+        }
+    }
+
+    .categories{
+        @include flex-row;
+        overflow-x: scroll;
+        padding: $m-pad;
+
+        .category--card{
+            width: 400px;
+            border: 1px solid $agencyBlue;
+            border-radius: $m-border-radius;
+            @include flex-col;
+            padding: $m-pad $s-pad;
+        }
+        
+    }
+}

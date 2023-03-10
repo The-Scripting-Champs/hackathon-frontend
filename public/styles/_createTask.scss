@@ -1,0 +1,11 @@
+#createTask{
+    height: 100vh;
+    @include flex-row;
+    position: fixed;
+    inset: 0;
+
+    form{
+    background-color: $agencyGrey;
+    border: solid $agencyOutline;
+    }
+}

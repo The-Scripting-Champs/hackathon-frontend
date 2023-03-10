@@ -1,0 +1,26 @@
+.task--card{
+    @include flex-col;
+    width: 310px;
+    height: 140px;
+    border-radius: $m-border-radius;
+    justify-content: flex-start;
+    background-color: $agencyGrey;
+    color: $default;
+    padding: $s-pad;
+    margin-block: 0.5rem;
+    cursor: pointer;
+    
+    div{
+        width: 100%;
+        @include flex-row;
+        justify-content: space-between;        
+        gap: 1rem;
+    }
+
+    select{
+        padding: 0.5rem;
+        width: max-content;
+    }
+
+    
+}

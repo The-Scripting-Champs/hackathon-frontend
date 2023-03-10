@@ -1,6 +1,5 @@
 import React, { useState} from 'react'
 import { useUser } from '../contexts/UserContext';
-import { teams } from './dummyTeamData';
 import { toast } from "react-toastify"
 
 export interface Team {
@@ -24,7 +23,6 @@ export const AddTeamModal = ({setShowModal}:any) => {
     const { name, description, dueDate } = teamData
 
     const handleChange = (e:Event | any) => {
-        e.preventDefault()
         const { name, value } = e.target
         setTeamData((prevData:any) => ({
             ...prevData,

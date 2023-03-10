@@ -9,6 +9,8 @@ import Home from './components/Home';
 import { Nav } from './components/Nav';
 import { Signin } from './components/Signin';
 import { Signup } from './components/Signup';
+import { CreateTasks } from './components/Tasks/CreateTasks';
+import { TasksPage } from './components/Tasks/TasksPage';
 import { TeamManagement } from './components/TeamManagement/TeamManagement';
 import { UserProvider } from './contexts/UserContext';
 
@@ -24,6 +26,8 @@ function App() {
       <Route path="/teams" element={<TeamManagement />} />
       <Route path="/clients" element={<ClientManagement />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/tasks" element={<TasksPage />} />
+      <Route path="/create" element={<CreateTasks />} />
     </Routes>
     </UserProvider>
     <ToastContainer 

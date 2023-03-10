@@ -7,7 +7,7 @@ export const AccountPanel = () => {
   return (
     <div className='panel'>
         <h4><Link to="/dashboard"> Account Settings</Link></h4>
-        <h4 onClick={signOut}>Log Out</h4>
+        <h4 style={{cursor: "pointer"}} onClick={signOut}>Log Out</h4>
     </div>
   )
 }

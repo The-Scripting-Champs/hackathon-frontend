@@ -4,7 +4,7 @@ import avatar from "../../assets/dummy_avatar.png"
 import { useUser } from '../../contexts/UserContext'
 
 export const Dashboard = () => {
-  const { user }= useUser()
+  const { user, teams }= useUser()
   console.log(user)
   return (
     <div id='dashboard'>
@@ -13,6 +13,8 @@ export const Dashboard = () => {
             <div>
               <h1>Hi, {user?.fullName}. <br></br> Welcome to your Dashboard</h1>
               <p>...navigate through your Workspace</p>
+              <br />
+              <h2>No. of Teams: {teams.length}</h2>
             </div>
             <div>
               <img src={avatar} alt="" />

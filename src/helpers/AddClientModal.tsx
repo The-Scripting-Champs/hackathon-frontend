@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import { useUser } from '../contexts/UserContext';
 import { toast } from "react-toastify"
 export interface Client {
-    id?: number;
+    _id?: string;
     name: string;
     bio: string;
     dateOfCreation: string;
@@ -20,7 +20,6 @@ export const AddClientModal = ({setShowModal}:any) => {
     const { name, bio, dateOfCreation } = clientData
 
     const handleChange = (e:Event | any) => {
-        e.preventDefault()
         const { name, value } = e.target
         setClientData((prevData:any) => ({
             ...prevData,

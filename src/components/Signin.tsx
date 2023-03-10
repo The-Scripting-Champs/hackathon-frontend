@@ -38,6 +38,7 @@ export const Signin = () => {
         const data = await response.json();
         toast.success(data.message);
         const user = localStorage.setItem('hackathonUser', JSON.stringify(data))
+        console.log(data)
         setUser(user)
         return navigate('/dashboard')
       } else {
